@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Creative Input</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .input-container {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+
+    .input-container input {
+      width: calc(100% - 40px);
+      padding: 12px 40px;
+      font-size: 16px;
+      border-radius: 50px;
+      border: none;
+      outline: none;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .input-container input::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+      transition: opacity 0.3s ease;
+    }
+
+    .input-container input:focus::placeholder,
+    .input-container input:hover::placeholder {
+      opacity: 0;
+    }
+
+    .input-container .icon {
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      transform: translateY(-50%);
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.5s ease;
+    }
+
+    .input-container input:focus ~ .icon,
+    .input-container input:hover ~ .icon {
+      transform: translate(320px, -50%);
+    }
+
+    .decorative-element {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(10px);
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .decorative-1 {
+      top: -50px;
+      left: -40px;
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .decorative-2 {
+      bottom: -60px;
+      right: -60px;
+      width: 120px;
+      height: 120px;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .decorative-3 {
+      bottom: 20px;
+      left: 30px;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="input-container">
+    <input type="text" placeholder="Search for inspiration...">
+    <span class="icon">🔍</span>
+    <div class="decorative-element decorative-1"></div>
+    <div class="decorative-element decorative-2"></div>
+    <div class="decorative-element decorative-3"></div>
+  </div>
+</body>
+</html>
